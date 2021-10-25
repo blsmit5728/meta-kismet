@@ -1,0 +1,13 @@
+Index: Kismet-2021-08-R1-r0/git/Makefile.in
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/Makefile.in
++++ Kismet-2021-08-R1-r0/git/Makefile.in
+@@ -579,7 +579,7 @@ configsinstall: $(CONFINSTTARGETS)
+ 	@echo
+ 
+ suidinstall:
+-	-groupadd -r -f $(SUIDGROUP)
++	#-groupadd -r -f $(SUIDGROUP)
+ 
+ 	@$(MAKE) -e commoninstall
+ 	@$(MAKE) -e binsuidinstall
