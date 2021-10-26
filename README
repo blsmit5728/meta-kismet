@@ -5,23 +5,11 @@ Please see the corresponding sections below for details.
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
-
-  URI: <second dependency>
-  branch: <branch name>
-
-  .
-  .
-  .
+  URI: meta-oe
+  branch: dunfell
 
 Patches
 =======
-
-Please submit any patches against the meta-kismet layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
 
 Table of Contents
 =================
@@ -34,6 +22,15 @@ I. Adding the meta-kismet layer to your build
 =================================================
 
 Run 'bitbake-layers add-layer meta-kismet'
+
+Add the following to your local.conf.
+
+'
+IMAGE_INSTALL_append = " python3"
+
+CORE_IMAGE_EXTRA_INSTALL += "openssh"
+CORE_IMAGE_EXTRA_INSTALL += "python3 gpsd expat gmp imagemagick tiff zlib bzip2 libpcap kismet"
+'
 
 II. Misc
 ========
