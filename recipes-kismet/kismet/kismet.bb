@@ -16,7 +16,8 @@ LIC_FILES_CHKSUM = "file://git/LICENSE;md5=21d24e9d61cfe0fd83aebabd3788785c"
 
 #SRC_URI = "https://www.kismetwireless.net/code/kismet-2021-08-R1.tar.xz"
 SRC_URI = "git://www.kismetwireless.net/git/kismet.git;protocol=https;nobranch=1 \
-          file://no-group-make.patch"
+          file://no-group-make.patch \ 
+          file://setup_python_shebangs.patch"
 
 # Modify these as desired
 PV = "Kismet-2021-08-R1"
@@ -52,6 +53,7 @@ EXTRA_OECONF = ""
 
 GROUPADD_PARAM:${PN} = "-r -f kismet"
 
+
 ONFIGUREOPTS = " --build=${BUILD_SYS} \
 		  --host=${HOST_SYS} \
 		  --target=${TARGET_SYS} \
@@ -70,6 +72,7 @@ ONFIGUREOPTS = " --build=${BUILD_SYS} \
 		  --infodir=${infodir} \
 		  --mandir=${mandir} \
 		  --disable-silent-rules \
+                  #--with-python-interpreter=${PYTHON} \
 		  ${CONFIGUREOPT_DEPTRACK} \
 		  ${@append_libtool_sysroot(d)}"
 
@@ -88,6 +91,9 @@ fakeroot do_install() {
 	cd git
 	oe_runmake "DESTDIR=${D}" suidinstall
 }
+
+
+RDEPENDS_${PN} = " python3"
 
 #fakeroot do_install() {
 #     oe_runmake "DESTDIR=${D}" suidinstall

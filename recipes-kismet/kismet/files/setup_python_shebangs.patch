@@ -1,0 +1,54 @@
+Index: Kismet-2021-08-R1-r0/git/capture_bt_geiger/KismetCaptureBtGeiger/kismet_cap_bt_geiger.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_bt_geiger/KismetCaptureBtGeiger/kismet_cap_bt_geiger.py
++++ Kismet-2021-08-R1-r0/git/capture_bt_geiger/KismetCaptureBtGeiger/kismet_cap_bt_geiger.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import sys
+ import time
+ import KismetCaptureBtGeiger
+Index: Kismet-2021-08-R1-r0/git/capture_freaklabs_zigbee/KismetCaptureFreaklabsZigbee/kismet_cap_freaklabs_zigbee.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_freaklabs_zigbee/KismetCaptureFreaklabsZigbee/kismet_cap_freaklabs_zigbee.py
++++ Kismet-2021-08-R1-r0/git/capture_freaklabs_zigbee/KismetCaptureFreaklabsZigbee/kismet_cap_freaklabs_zigbee.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import sys
+ import time
+ import KismetCaptureFreaklabsZigbee
+Index: Kismet-2021-08-R1-r0/git/capture_proxy_adsb/KismetCaptureProxyAdsb/kismet_cap_proxy_adsb.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_proxy_adsb/KismetCaptureProxyAdsb/kismet_cap_proxy_adsb.py
++++ Kismet-2021-08-R1-r0/git/capture_proxy_adsb/KismetCaptureProxyAdsb/kismet_cap_proxy_adsb.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import asyncio
+ import sys
+ import time
+Index: Kismet-2021-08-R1-r0/git/capture_sdr_rtl433/KismetCaptureRtl433/kismet_cap_sdr_rtl433.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_sdr_rtl433/KismetCaptureRtl433/kismet_cap_sdr_rtl433.py
++++ Kismet-2021-08-R1-r0/git/capture_sdr_rtl433/KismetCaptureRtl433/kismet_cap_sdr_rtl433.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import sys
+ import time
+ import KismetCaptureRtl433
+Index: Kismet-2021-08-R1-r0/git/capture_sdr_rtladsb/KismetCaptureRtladsb/kismet_cap_sdr_rtladsb.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_sdr_rtladsb/KismetCaptureRtladsb/kismet_cap_sdr_rtladsb.py
++++ Kismet-2021-08-R1-r0/git/capture_sdr_rtladsb/KismetCaptureRtladsb/kismet_cap_sdr_rtladsb.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import asyncio
+ import sys
+ import time
+Index: Kismet-2021-08-R1-r0/git/capture_sdr_rtlamr/KismetCaptureRtlamr/kismet_cap_sdr_rtlamr.py
+===================================================================
+--- Kismet-2021-08-R1-r0.orig/git/capture_sdr_rtlamr/KismetCaptureRtlamr/kismet_cap_sdr_rtlamr.py
++++ Kismet-2021-08-R1-r0/git/capture_sdr_rtlamr/KismetCaptureRtlamr/kismet_cap_sdr_rtlamr.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ import sys
+ import time
+ import KismetCaptureRtlamr
