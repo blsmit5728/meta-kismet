@@ -95,14 +95,32 @@ fakeroot do_install() {
 
 RDEPENDS_${PN} = " python3"
 
-#fakeroot do_install() {
-#     oe_runmake "DESTDIR=${D}" suidinstall
-#}
+KISMET_PYTHON_EXE="python3"
+KISMET_PYTHON_EXE_class-native="nativepython3"
 
-#do_install_append() {
-#	if test -e ${WORKDIR}/kismet.conf; then
-#		install -m 644 ${WORKDIR}/kismet.conf ${D}${sysconfdir}/
-#	fi
-#}
+determine_if_python_file() {
+    RET=`file $1 | grep "python"`
+    if [ "$?" -eq "0" ]
+    then
+        echo "0"
+    else
+        echo "1"
+    fi
+}
 
-
+# pythonn-setuptools does some mangling of the #! in any scripts it installs,
+# which has been reported for years at pypa/setuptools#494.  OE has
+# workarounds in distutils3.bbclass, but we cannot inherit that here because
+# it conflicts with autotools.bbclass.  Port the un-mangling code here.
+#
+# This finds any ${PYTHON} executable path that got put into the scripts
+# and reverts it back to "/usr/bin/env python3".  It also reverts any full
+# ${STAGING_BINDIR_NATIVE} path back to "/usr/bin".
+#
+do_install_append() {
+    for i in ${D}${bindir}/* ${D}${sbindir}/*; do
+        if [ -f "$i" ]; then 
+            sed -i -r -e 's:^.*python3:#!/usr/bin/env\ python3:g' $i
+        fi
+    done
+}
